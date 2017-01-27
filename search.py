@@ -49,13 +49,13 @@ def binary_search_iterative(array, item):
 
     while lowerIndex <= upperIndex:
         middleIndex = (lowerIndex + upperIndex) / 2
-        if array[middleIndex] == item:
-            wasFound = True
-            return middleIndex
-        elif array[middleIndex] > item:
+
+        if array[middleIndex] > item:
             upperIndex = middleIndex - 1
         elif array[middleIndex] < item:
             lowerIndex = middleIndex + 1
+        elif array[middleIndex] == item:
+            return middleIndex
 
     return None
 
@@ -76,5 +76,5 @@ def binary_search_recursive(array, item, left=None, right=None):
         return middle
     elif array[middle] < item:
         return binary_search_recursive(array, item, middle + 1, right)
-    elif array[middle] > item:
+    else array[middle] > item:
         return binary_search_recursive(array, item, left, middle - 1)
