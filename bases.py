@@ -2,7 +2,6 @@
 
 import string
 
-
 def decode(str_num, base):
     """
     Decode given number from given base to base 10.
@@ -10,7 +9,22 @@ def decode(str_num, base):
     base -- base of given number
     """
     assert 2 <= base <= 36
-    # TODO: Decode number
+
+    currentTotal = 0
+    for number in str_num:
+        currentTotal = (int(number) * base) + currentTotal
+
+    return currentTotal
+
+    # print(str_num[0])
+    #
+    # if len(str_num) == 1:
+    #     return int(str_num[0])
+    # else:
+    #
+    #
+    #     return (base * int(str_num[0])) +
+
 
 def encode(num, base):
     """
@@ -44,4 +58,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    print(decode('101', 2))
+    # decode('101', 2)
