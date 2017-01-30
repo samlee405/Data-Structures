@@ -14,9 +14,6 @@ def is_palindrome(text):
 def is_palindrome_iterative(text):
     text = cleanText(text)
 
-    if len(text) == 0 or len(text) == 1:
-        return True
-
     characterIndex = 0
     while characterIndex < (len(text) / 2):
         if text[characterIndex] != text[-(characterIndex + 1)]:
@@ -37,8 +34,8 @@ def is_palindrome_recursive(text, left=None, right=None):
         left = 0
         right = len(text) - 1
 
-    print(left)
-    print(right)
+    # print(left)
+    # print(right)
     if text[left] != text[right]:
         return False
     elif left >= right and text[left] == text[right]:
@@ -63,7 +60,7 @@ def is_anagram(text, text2):
     setA = set(cleanText(text))
     setB = set(cleanText(text2))
 
-    if setA <= setB and setA>= setB:
+    if setA <= setB and setA >= setB:
         return True
     else:
         return False
@@ -96,4 +93,5 @@ def main():
 if __name__ == '__main__':
     # main()
 
-    print(is_contained_in("in", "thing"))
+    # print(is_contained_in("in", "thing"))
+    print(is_anagram("Debit card", "Bad credit"))
