@@ -54,7 +54,8 @@ def binary_search_iterative(array, item):
             upperIndex = middleIndex - 1
         elif array[middleIndex] < item:
             lowerIndex = middleIndex + 1
-        elif array[middleIndex] == item:
+        elifquitq
+         array[middleIndex] == item:
             return middleIndex
 
     return None
