@@ -40,9 +40,9 @@ class LinkedList(object):
         """Return True if this linked list is empty, or False otherwise"""
         return self.head is None
 
-    def length(self):
-        """Return the length of this linked list by traversing its nodes"""
-        return self.length
+    # def length(self):
+    #     """Return the length of this linked list by traversing its nodes"""
+    #     return self.length
 
     def append(self, item):
         """Insert the given item at the tail of this linked list"""

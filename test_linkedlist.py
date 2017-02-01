@@ -31,13 +31,13 @@ class LinkedListTest(unittest.TestCase):
 
     def test_length(self):
         ll = LinkedList()
-        assert ll.length() == 0
+        assert ll.length == 0
         ll.append('A')
-        assert ll.length() == 1
+        assert ll.length == 1
         ll.append('B')
-        assert ll.length() == 2
+        assert ll.length == 2
         ll.append('C')
-        assert ll.length() == 3
+        assert ll.length == 3
 
     def test_append(self):
         ll = LinkedList()
