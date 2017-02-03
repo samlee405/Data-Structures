@@ -1,50 +1,55 @@
 #!python
 from linkedlist import LinkedList
 
-# class Stack(object): # dynamic array
-#
-#     def __init__(self, iterable=None):
-#         """Initialize this stack and push the given items, if any"""
-#         self.length = 0
-#         self.stack = []
-#         if iterable:
-#             for item in iterable:
-#                 self.push(item)
-#
-#     def __repr__(self):
-#         """Return a string representation of this stack"""
-#         return 'Stack({})'.format(self.stack)
-#
-#     def is_empty(self):
-#         """Return True if this stack is empty, or False otherwise"""
-#         if self.length == 0:
-#             return True
-#         else:
-#             return False
-#
-#     def peek(self):
-#         """Return the top item on this stack without removing it,
-#         or None if this stack is empty"""
-#         if self.length != 0:
-#             return self.stack[self.length - 1]
-#         else:
-#             return None
-#
-#     def push(self, item):
-#         """Push the given item onto this stack"""
-#         self.stack.append(item)
-#         self.length += 1
-#
-#     def pop(self):
-#         """Return the top item and remove it from this stack,
-#         or raise ValueError if this stack is empty"""
-#         if self.length == 0:
-#             raise ValueError
-#         else:
-#             valueToReturn = self.stack[self.length - 1]
-#             del self.stack[self.length - 1]
-#             self.length -= 1
-#             return valueToReturn
+class Stack(object): # dynamic array
+
+    def __init__(self, iterable=None):
+        """Initialize this stack and push the given items, if any"""
+        self.length = 0
+        self.stack = []
+        if iterable:
+            for item in iterable:
+                self.push(item)
+
+    def __repr__(self):
+        """Return a string representation of this stack"""
+        return 'Stack({})'.format(self.stack)
+
+    def is_empty(self):
+        """Return True if this stack is empty, or False otherwise"""
+        if self.length == 0:
+            return True
+        else:
+            return False
+
+    # O(1)
+    def peek(self):
+        """Return the top item on this stack without removing it,
+        or None if this stack is empty"""
+        if self.length != 0:
+            return self.stack[self.length - 1]
+        else:
+            return None
+
+    # O(1)
+    def push(self, item):
+        """Push the given item onto this stack"""
+        self.stack.append(item)
+        self.length += 1
+
+    # O(1)
+    def pop(self):
+        """Return the top item and remove it from this stack,
+        or raise ValueError if this stack is empty"""
+        if self.length == 0:
+            raise ValueError
+        else:
+            valueToReturn = self.stack[self.length - 1]
+            del self.stack[self.length - 1]
+            self.length -= 1
+            return valueToReturn
+
+
 
 class Stack(object): # linked list
 
@@ -71,6 +76,7 @@ class Stack(object): # linked list
         # print(self.stack.length)
         return self.stack.length
 
+    # O(1)
     def peek(self):
         """Return the top item on this stack without removing it,
         or None if this stack is empty"""
@@ -79,10 +85,12 @@ class Stack(object): # linked list
         else:
             return None
 
+    # O(1)
     def push(self, item):
         """Push the given item onto this stack"""
         self.stack.append(item)
 
+    # O(n)
     def pop(self): # implement a doubly linked list to have constant speed
         """Return the top item and remove it from this stack,
         or raise ValueError if this stack is empty"""

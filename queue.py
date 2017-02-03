@@ -26,6 +26,7 @@ from linkedlist import LinkedList
 #         """Return the number of items in this queue"""
 #         return self.queueLength
 #
+#     # O(1)
 #     def peek(self):
 #         """Return the next item in this queue without removing it,
 #         or None if this queue is empty"""
@@ -34,11 +35,13 @@ from linkedlist import LinkedList
 #         else:
 #             return None
 #
+#     # O(1)
 #     def enqueue(self, item):
 #         """Enqueue the given item into this queue"""
 #         self.queue.append(item)
 #         self.queueLength += 1
 #
+#     # O(n)
 #     def dequeue(self):
 #         """Return the next item and remove it from this queue,
 #         or raise ValueError if this queue is empty"""
@@ -85,10 +88,12 @@ class Queue(LinkedList):
         else:
             return None
 
+    # O(1)
     def enqueue(self, item):
         """Enqueue the given item into this queue"""
         self.append(item)
 
+    # O(1)
     def dequeue(self):
         """Return the next item and remove it from this queue,
         or raise ValueError if this queue is empty"""
@@ -97,7 +102,7 @@ class Queue(LinkedList):
             raise ValueError
         else:
             valueToReturn = self.head.data
-            self.head = self.head.next
+            super(Queue, self).delete(valueToReturn)
             self.length -= 1
 
             return valueToReturn
