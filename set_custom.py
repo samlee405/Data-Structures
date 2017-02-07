@@ -34,7 +34,7 @@ class Set(object):
 
         while currentNode != None:
             if currentNode.data == item:
-                print(str(item) + " is already exists in the set")
+                print(str(item) + " already exists in the set")
                 return
 
             currentNode = currentNode.next
