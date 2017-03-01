@@ -13,7 +13,8 @@ def main():
     print(costs)
 
 def getRoutes():
-    f = open("route-costs-1000000.txt", "r")
+    # f = open("route-costs-1000000.txt", "r")
+    f = open("route-costs-3.txt", "r")
     routes = []
 
     for line in f:
@@ -21,7 +22,7 @@ def getRoutes():
 
     return routes
 
-# def getRoutesFromMultipleFiles():
+# def getRoutesFromMultipleSources):
 
 def generateTrie(routes):
     routeTrie = trie.Trie()
@@ -54,12 +55,13 @@ def findPriceForNumber(phoneNumber, routeTrie):
     length = len(phoneNumber)
 
     while length > 0:
-        if routeTrie.prefixSearch(phoneNumber[:length]):
+        if routeTrie.prefixSearch(phoneNumber[:length]) is not None:
             return routeTrie.prefixSearch(phoneNumber[:length])
 
         length -= 1
 
-    assert ValueError("Number inputted has no matching route")
+    raise ValueError("Number inputted has no matching route")
+    # maybe use continue in the above for loop for values that return None
 
 
 if __name__ == "__main__":

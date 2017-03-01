@@ -12,7 +12,7 @@ class Trie(object):
 
     # Theta(n)
     def insert(self, item):
-        route = item[:-5] + "$"
+        route = item[:-5]
         cost = item[-4:]
         currentNode = self.root
 
@@ -20,11 +20,10 @@ class Trie(object):
             if character in currentNode.children:
                 currentNode = currentNode.children[character]
             else:
-                if character == "$":
-                    currentNode.children["$"] = cost
-                else:
-                    currentNode.children[character] = Node()
-                    currentNode = currentNode.children[character]
+                currentNode.children[character] = Node()
+                currentNode = currentNode.children[character]
+
+        currentNode.children["$"] = cost
 
     # O(n) Omega(1)
     def prefixSearch(self, item):
