@@ -52,7 +52,7 @@ class BinaryTree(object):
         return False
 
     # in order traversal
-    def traversal(self, node=None, returnList=[]):
+    def traversal(self, node=None, returnList=None):
         # if binary search tree is empty return empty list
         if self.root == None:
             return returnList
@@ -61,17 +61,19 @@ class BinaryTree(object):
         if node == None:
             node = self.root
 
+        if returnList is None:
+            print("initialize list")
+            returnList = []
+
         # traverse downwards towards the left
         if node.left != None:
-            self.traversal(node.left)
+            self.traversal(node.left, returnList)
 
-        # print/append current data @ node
-        # print(node.data)
         returnList.append(node.data)
 
         # traverse downwards towards the right
         if node.right != None:
-            self.traversal(node.right)
+            self.traversal(node.right, returnList)
 
         return returnList
 
@@ -86,3 +88,5 @@ if __name__ == "__main__":
     bst.insert(21)
     # print(bst.root.right.data)
     print(bst.traversal())
+    # print(bst.traversal())
+    # print(bst.traversal())
